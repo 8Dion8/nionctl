@@ -19,6 +19,7 @@ The PyPi page is availible [here.](https://pypi.org/project/nionctl/)
 - Wifi list and connect/disconnect
 - `git clone` from url to default directory
 - `neofetch` (because why not)
+
 Full docs are available [at COMMANDS.md](COMMANDS.md)
 
 
