@@ -16,8 +16,8 @@ The PyPi page is availible [here.](https://pypi.org/project/nionctl/)
 
 ## Current commands (WIP):
 
-- Basic WiFi controlling
-- Basic Bluetooth controlling
+- Basic WiFi controlling (uses `nmcli`)
+- Basic Bluetooth controlling (uses `bluetoothctl`)
 - `git clone` from url to default directory
 - `neofetch` (because why not)
 
