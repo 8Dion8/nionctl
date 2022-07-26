@@ -1,9 +1,12 @@
 import typer
 
-import wifi
-import bt
-import util
-import archive
+import os
+os.system('export PYTHONPATH=.')
+
+import lib.wifi as wifi
+import lib.bt as bt
+import lib.util as util
+import lib.archive as archive
 
 
 main_app = typer.Typer()
