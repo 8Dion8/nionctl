@@ -19,7 +19,7 @@ The PyPi page is availible [here.](https://pypi.org/project/nionctl/)
 - Basic WiFi controlling (uses `nmcli`)
 - Basic Bluetooth controlling (uses `bluetoothctl`)
 - `git clone` from url to default directory
-- `neofetch` (because why not)
+- Basic archiving utilities (supports `.zip`, `.tar`, `.tar.gz`, `.tar.bz2`)
 
 Full docs are available [at COMMANDS.md](COMMANDS.md)
 
