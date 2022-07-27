@@ -1,7 +1,8 @@
 import typer
 
-import os
-os.system('export PYTHONPATH=.')
+import os, sys
+pwd = "/".join(__file__.split("/")[:-1])
+sys.path.append(pwd)
 
 import lib.wifi as wifi
 import lib.bt as bt

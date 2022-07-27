@@ -5,6 +5,7 @@ from rich.table import Table
 import subprocess
 import os
 from time import sleep
+from shutil import which
 
 def run_shell_command(command):
     out = subprocess.run([i for i in command.split()], stdout=subprocess.PIPE).stdout.decode('utf-8')
@@ -14,6 +15,12 @@ bt_app = typer.Typer()
 console = Console()
 HOMEDIR = os.getenv("HOME")
 
+
+
+@bt_app.callback()
+def bt_callback():
+    if which("bluetoothctl") is None:
+        rich_print("[bold black on red] bluetoothctl is not installed!\nPlease install bluetoothctl using your system package manager.")
 
 
 @bt_app.command("on")

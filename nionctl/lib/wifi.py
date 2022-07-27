@@ -56,3 +56,9 @@ def wifi_disconnect():
     connected_ssid = run_shell_command("iwgetid -r")
     out = run_shell_command(f"nmcli c down {connected_ssid}")
     rich_print(out)
+
+@wifi_app.command("speedtest")
+def wifi_speedtest():
+    from shutil import which
+    if which("speedtest-cli") is None:
+        rich_print("[bold black on red] speedtest-cli is not installed!\nPlease install speedtest-cli using your system package manager.")
