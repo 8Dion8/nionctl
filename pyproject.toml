@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "nionctl"
-version = "0.2.2.11"
+version = "0.2.3"
 description = ""
 authors = ["8Dion8 <shvartserinfo@gmail.com>"]
 readme = "README.md"

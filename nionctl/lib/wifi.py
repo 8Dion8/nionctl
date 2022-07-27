@@ -57,8 +57,25 @@ def wifi_disconnect():
     out = run_shell_command(f"nmcli c down {connected_ssid}")
     rich_print(out)
 
+
+def print_speed_results(data):
+    rich_print(f"[bold green]Ping: {round(data['ping'] * 10)/10}  ms")
+    rich_print(f"[bold green]Down: {round(data['download']/1e+4)/1e+2} mbit/s")
+    rich_print(f"[bold green]Up:   {round(data['upload']/1e+4)/1e+2} mbit/s")
+
 @wifi_app.command("speedtest")
 def wifi_speedtest():
     from shutil import which
     if which("speedtest-cli") is None:
-        rich_print("[bold black on red] speedtest-cli is not installed!\nPlease install speedtest-cli using your system package manager.")
+        rich_print("[bold black on red] speedtest-cli is not installed!\nPlease install speedtest-cli using[/bold black on red][yellow]pip3 install speedtest-cli")
+        return
+    import speedtest
+    s = speedtest.Speedtest()
+    rich_print("[yellow]Getting server")
+    s.get_best_server()
+    rich_print("[yellow]Testing download")
+    s.download()
+    rich_print("[yellow]Testing upload")
+    s.upload()
+    results = s.results.dict()
+    print_speed_results(results)
