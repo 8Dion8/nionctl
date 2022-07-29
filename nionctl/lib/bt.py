@@ -20,7 +20,7 @@ HOMEDIR = os.getenv("HOME")
 @bt_app.callback()
 def bt_callback():
     if which("bluetoothctl") is None:
-        rich_print("[bold black on red] bluetoothctl is not installed!\nPlease install bluetoothctl using your system package manager.")
+        rich_print("[bold red] bluetoothctl is not installed!\nPlease install bluetoothctl using your system package manager.")
 
 
 @bt_app.command("on")

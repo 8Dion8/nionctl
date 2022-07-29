@@ -67,7 +67,7 @@ def print_speed_results(data):
 def wifi_speedtest():
     from shutil import which
     if which("speedtest-cli") is None:
-        rich_print("[bold black on red] speedtest-cli is not installed!\nPlease install speedtest-cli using[/bold black on red][yellow]pip3 install speedtest-cli")
+        rich_print("[bold red]speedtest-cli is not installed! Please install speedtest-cli using[/bold red][yellow]pip3 install speedtest-cli")
         return
     import speedtest
     s = speedtest.Speedtest()
