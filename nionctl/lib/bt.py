@@ -96,6 +96,10 @@ def bluetooth_pair_off():
             return
     rich_print("[bold red]Bluetooth pairable off failed.")
 
+@bt_app.command("pair")
+def bluetooth_pair(ssid: str):
+    run_shell_command(f"bluetoothctl pair {ssid}")
+
 @bt_app.command("remove")
 def bluetooth_remove(ssid: str):
     out = run_shell_command(f"bluetoothctl remove {ssid}")
