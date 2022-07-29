@@ -22,7 +22,6 @@ The PyPi page is availible [here.](https://pypi.org/project/nionctl/)
 - Basic archiving utilities (supports `.zip`, `.tar`, `.tar.gz`, `.tar.bz2`)
 - Simple image editing (converting, rotating, resizing, negating etc)
 
-Full docs are available [at COMMANDS.md](COMMANDS.md)
 
 
 ## Contributing
