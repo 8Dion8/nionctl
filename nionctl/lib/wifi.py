@@ -4,6 +4,7 @@ from rich.console import Console
 from rich.table import Table
 import subprocess
 import os
+from getpass import getpass
 
 def run_shell_command(command):
     out = subprocess.run([i for i in command.split()], stdout=subprocess.PIPE).stdout.decode('utf-8')
@@ -47,9 +48,16 @@ def wifi_list():
     console.print(table)
 
 @wifi_app.command("connect")
-def wifi_connect(ssid: str):
-    out = run_shell_command(f"nmcli c up {ssid}")
-    rich_print(out)
+def wifi_connect(name: str):
+    out = run_shell_command(f"nmcli dev wifi connect {name}")
+    if "Secrets were required" in out:
+        password = getpass()
+        out = run_shell_command(f"nmcli dev wifi connect {name} password {password}")
+    #rich_print("[yellow]Connecting...")
+    if "successfully activated" in out:
+        rich_print(f"[bold green]Successfully connected to {name}")
+    else:
+        rich_print(out)
 
 @wifi_app.command("disconnect")
 def wifi_disconnect():
